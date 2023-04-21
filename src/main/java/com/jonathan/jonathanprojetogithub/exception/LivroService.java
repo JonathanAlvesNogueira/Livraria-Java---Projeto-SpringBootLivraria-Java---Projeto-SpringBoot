@@ -2,6 +2,7 @@ package com.jonathan.jonathanprojetogithub.exception;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.jonathan.jonathanprojetogithub.entity.Livro;
 import com.jonathan.jonathanprojetogithub.entity.LivroRepository;
 
 public class LivroService {
@@ -12,6 +13,14 @@ public class LivroService {
 	public LivroService(LivroRepository livroRepository) {
 		this.livroRepository = livroRepository;
 	}
+
+	public Livro retornaLivroPorId(long id) {
+		
+			return this.livroRepository.getReferenceById(id);
+		
+		
+	}
+	
 	
 	
 	
