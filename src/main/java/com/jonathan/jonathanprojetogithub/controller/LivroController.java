@@ -39,8 +39,8 @@ public class LivroController {
 	
 	
 	@DeleteMapping("{id}")
-	public void deletaClientePorId(@PathVariable Long id) throws Exception {
-		livroService.deletaClientePorId(id);
+	public void deletaLivroPorId(@PathVariable Long id) throws Exception {
+		livroService.deletaLivroPorId(id);
 	}
 	
 	

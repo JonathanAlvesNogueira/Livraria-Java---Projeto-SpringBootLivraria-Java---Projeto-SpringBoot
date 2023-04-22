@@ -30,8 +30,13 @@ public class LivroService {
 		return this.livroRepository.save(livro);
 	}
 
-	public void deletaClientePorId(Long id) {
-		return this.livroRepository.deleteById(id);;
+	public void deletaLivroPorId(Long id) throws Exception {
+		if(this.livroRepository.existsById(id)) {
+			this.livroRepository.deleteById(id);
+		}
+		
+		throw new LivroNaoEncontradoException(id);
+		
 	}
 	
 	
