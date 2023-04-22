@@ -6,6 +6,8 @@ import com.jonathan.jonathanprojetogithub.entity.Livro;
 import com.jonathan.jonathanprojetogithub.entity.LivroRepository;
 import com.jonathan.jonathanprojetogithub.exception.LivroNaoEncontradoException;
 
+import jakarta.validation.Valid;
+
 public class LivroService {
 
 	LivroRepository livroRepository;
@@ -22,6 +24,14 @@ public class LivroService {
 		
 		throw new LivroNaoEncontradoException(id);
 		
+	}
+
+	public Livro cadastraLivro(Livro livro) {
+		return this.livroRepository.save(livro);
+	}
+
+	public void deletaClientePorId(Long id) {
+		return this.livroRepository.deleteById(id);;
 	}
 	
 	
